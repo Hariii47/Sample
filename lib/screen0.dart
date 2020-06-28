@@ -11,11 +11,13 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
+          centerTitle: true,
+            elevation: 0,
             title: Center(
               child: Text('TODO'),
             ),
             actions: <Widget>[
-              // add pop up
+              IconButton(icon: Icon(Icons.menu),),
             ],
           ),
           body: SafeArea(
@@ -64,15 +66,14 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 10,
                   ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      Navigator.pushNamed(context, 'screen1');
-                    });
-                    },
-                  child: Expanded(
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        Navigator.pushNamed(context, 'screen1');
+                      });
+                      },
                     child: Container(
-                      height: 270,
                         padding: EdgeInsets.only(left: 30, top: 30),
                         margin: EdgeInsets.symmetric(horizontal: 40, vertical: 30),
                         decoration: BoxDecoration(
@@ -80,34 +81,41 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(15),
                           color: Colors.white,
                         ),
-                        child: Column(
-                          children: <Widget>[
-                            Text(
-                              'Important',
-                              textAlign: TextAlign.left,
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Icon(Icons.check_box_outline_blank),
-                                SizedBox(width: 10),
-                                Text('Buy milk'),
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Icon(Icons.check_box_outline_blank),
-                                SizedBox(width: 10),
-                                Text('Call Balaji'),
-                              ],
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Icon(Icons.check_box_outline_blank),
-                                SizedBox(width: 10),
-                                Text('Workshop on app'),
-                              ],
-                            )
-                          ],
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                'Important',
+                                textAlign: TextAlign.left,
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Icon(Icons.check_box_outline_blank),
+                                  SizedBox(width: 10),
+                                  Text('Buy milk'),
+                                ],
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Icon(Icons.check_box_outline_blank),
+                                  SizedBox(width: 10),
+                                  Text('Call Balaji'),
+                                ],
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Icon(Icons.check_box_outline_blank),
+                                  SizedBox(width: 10),
+                                  Text('Workshop on app'),
+                                ],
+                              )
+                            ],
+                          ),
                         )),
                   ),
                 ),

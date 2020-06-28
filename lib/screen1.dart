@@ -17,6 +17,7 @@ class _TaskPageState extends State<TaskPage> {
         ),
         backgroundColor: Colors.white,
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(left: 30, top: 40),

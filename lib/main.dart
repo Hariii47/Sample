@@ -21,7 +21,6 @@ class Todo extends StatelessWidget {
         'screen0': (context) => HomePage(),
         'screen1': (context) => TaskPage(),
       },
-      home: HomePage(),
     );
 
   }
